@@ -1,37 +1,249 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Мой первый сайт!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё Портфолио</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 50px;
+            padding: 60px 0;
+            text-align: center;
         }
-        h1 {
+        
+        .hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
         }
-        p {
+        
+        .hero p {
             font-size: 1.2em;
-            max-width: 600px;
-            margin: 0 auto;
+            opacity: 0.9;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
+        
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background: white;
             padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎉 Привет, мир!</h1>
-        <p>Это мой первый сайт на GitHub Pages!</p>
-        <p>Скоро здесь будет что-то крутое...</p>
-    </div>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Привет, я [Твоё Имя]</h1>
+                <p>Начинающий веб-разработчик и программист</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">МоёПортфолио</div>
+            <ul class="nav-links">
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Кто я</h3>
+                    <p>Я начинающий программист, который любит создавать интересные проекты. Увлекаюсь веб-разработкой, Python и всем, что связано с технологиями.</p>
+                </div>
+                <div>
+                    <h3>Мои цели</h3>
+                    <p>Хочу стать профессиональным разработчиком, создавать полезные приложения и постоянно учиться новому.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Мои навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>HTML/CSS</h3>
+                    <p>Создаю красивые и адаптивные веб-страницы</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Пишу скрипты, работаю с API и анализирую данные</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>Добавляю интерактивность на сайты</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Git/GitHub</h3>
+                    <p>Версионирую код и collaborate с другими</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Мои проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Фото-бэкupper собак</h3>
+                        <p>Программа для резервного копирования фото собак на Яндекс.Диск</p>
+                        <p><strong>Технологии:</strong> Python, API, Requests</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Мой первый сайт</h3>
+                        <p>Этот сайт-портфолио, который ты сейчас просматриваешь!</p>
+                        <p><strong>Технологии:</strong> HTML, CSS, GitHub Pages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div style="text-align: center;">
+                <p>📧 Email: твой.email@example.com</p>
+                <p>💼 GitHub: github.com/твоё_имя</p>
+                <p>📱 Телеграм: @твой_ник</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Моё Портфолио. Сделано с ❤️ через GitHub Pages</p>
+        </div>
+    </footer>
 </body>
 </html>
